@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+     <style type="text/css">
+        #dawnload{
+            padding-top: 3px;
+            margin-top: auto;
+            margin-right: auto;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f9dcc4;
+        }
+     </style>
+</head>
+<body>
+    <div id='dawnload'>
+        <form method='POST' enctype='multipart/form-data'>
+            {{form.hidden_tag()}}
+            {{form.file()}}
+            {{form.submit()}}
+        </form>
+        <br>    <br>    <H2>   Или введите ссылку на файл:</H2>
+        <form action="/sendFileUrl?name={{name}}&uid={{uid}}&adminId={{adminId}}", method="post">
+            <p><label>Ссылка на файл: </label> <input type="text", name="url", value="", required /></p>
+            <p><input type="submit", value="Отправить файл" /></p> 
+        </form>
+    </div>
+</body>
+</html>
